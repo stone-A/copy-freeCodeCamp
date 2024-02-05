@@ -14,31 +14,31 @@ dashedName: problem-1-multiples-of-3-or-5
 
 # --hints--
 
-`multiplesOf3Or5(10)` should return a number.
+`multiplesOf3Or5(10)` は数値を返す必要があります。
 
 ```js
 assert(typeof multiplesOf3Or5(10) === 'number');
 ```
 
-`multiplesOf3Or5(49)` should return 543.
+`multiplesOf3Or5(49)` は 543 を返す必要があります。
 
 ```js
 assert.strictEqual(multiplesOf3Or5(49), 543);
 ```
 
-`multiplesOf3Or5(1000)` should return 233168.
+`multiplesOf3Or5(1000)` は 233168 を返す必要があります。
 
 ```js
 assert.strictEqual(multiplesOf3Or5(1000), 233168);
 ```
 
-`multiplesOf3Or5(8456)` should return 16687353.
+`multiplesOf3Or5(8456)` は 16687353 を返す必要があります。
 
 ```js
 assert.strictEqual(multiplesOf3Or5(8456), 16687353);
 ```
 
-`multiplesOf3Or5(19564)` should return 89301183.
+`multiplesOf3Or5(19564)` は 89301183 を返す必要があります。
 
 ```js
 assert.strictEqual(multiplesOf3Or5(19564), 89301183);

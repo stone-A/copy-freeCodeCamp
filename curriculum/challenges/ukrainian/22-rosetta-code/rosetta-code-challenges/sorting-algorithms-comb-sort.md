@@ -1,6 +1,6 @@
 ---
 id: 5a23c84252665b21eecc8005
-title: Алгоритми сортування/Сортування гребінцем
+title: Sorting algorithms/Comb sort
 challengeType: 1
 forumTopicId: 302313
 dashedName: sorting-algorithmscomb-sort
@@ -10,11 +10,11 @@ dashedName: sorting-algorithmscomb-sort
 
 Implement a *comb sort*.
 
-**Сортування Гребінцем** є варіантом Сортування Бульбашками.
+The **Comb Sort** is a variant of the Bubble Sort.
 
-Подібно до сортування Шелла, Сортування Гребінцем збільшує розрив, який використовується під час порівнянь та обмінів.
+Like the Shell sort, the Comb Sort increases the gap used in comparisons and exchanges.
 
-Поділ розриву найкраще здійснити на $(1-e^{-\\varphi})^{-1} \\approx 1.247330950103979$, але значення 1.3 може бути практичнішим.
+Dividing the gap by $(1-e^{-\\varphi})^{-1} \\approx 1.247330950103979$ works best, but 1.3 may be more practical.
 
 Деякі реалізації використовують сортування включенням, коли розрив менший за певну величину.
 

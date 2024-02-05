@@ -14,15 +14,15 @@ $A = LU$
 
 Таке представлення матриці є модифікованим методом Гауса.
 
-В той час як розклад Холецького тільки працює для симетричних, позитивно-визначених матриць, загальніший LU-розклад матриці працює для будь-якої квадратної матриці.
+While the Cholesky decomposition only works for symmetric, positive definite matrices, the more general LU decomposition works for any square matrix.
 
-Існують декілька алгоритмів для розрахунку $L$ та $U$.
+There are several algorithms for calculating $L$ and $U$.
 
-Для отримання *алгоритму Крота* для прикладу 3x3, нам необхідно розв'язати наступну систему:
+To derive *Crout's algorithm* for a 3x3 example, we have to solve the following system:
 
 \\begin{align}A = \\begin{pmatrix} a\_{11} & a\_{12} & a\_{13}\\\\ a\_{21} & a\_{22} & a\_{23}\\\\ a\_{31} & a\_{32} & a\_{33}\\\\ \\end{pmatrix}= \\begin{pmatrix} l\_{11} & 0 & 0 \\\\ l\_{21} & l\_{22} & 0 \\\\ l\_{31} & l\_{32} & l\_{33}\\\\ \\end{pmatrix} \\begin{pmatrix} u\_{11} & u\_{12} & u\_{13} \\\\ 0 & u\_{22} & u\_{23} \\\\ 0 & 0 & u\_{33} \\end{pmatrix} = LU\\end{align}
 
-Зараз нам доведеться розв'язати 9 рівнянь з 12 невідомими. Щоб зробити систему унікальною в розв'язанні, зазвичай діагональні елементи $L$ встановлюються на 1
+We now would have to solve 9 equations with 12 unknowns. To make the system uniquely solvable, usually the diagonal elements of $L$ are set to 1
 
 $l\_{11}=1$
 
@@ -30,17 +30,17 @@ $l\_{22}=1$
 
 $l\_{33}=1$
 
-тож ми отримали розв'язуючу систему з 9 невідомих та 9 рівнянь.
+so we get a solvable system of 9 unknowns and 9 equations.
 
 \\begin{align}A = \\begin{pmatrix} a\_{11} & a\_{12} & a\_{13}\\\\ a\_{21} & a\_{22} & a\_{23}\\\\ a\_{31} & a\_{32} & a\_{33}\\\\ \\end{pmatrix} = \\begin{pmatrix} 1 & 0 & 0 \\\\ l\_{21} & 1 & 0 \\\\ l\_{31} & l\_{32} & 1\\\\ \\end{pmatrix} \\begin{pmatrix} u\_{11} & u\_{12} & u\_{13} \\\\ 0 & u\_{22} & u\_{23} \\\\ 0 & 0 & u\_{33} \\end{pmatrix} = \\begin{pmatrix} u\_{11} & u\_{12} & u\_{13} \\\\ u\_{11}l\_{21} & u\_{12}l\_{21}+u\_{22} & u\_{13}l\_{21}+u\_{23} \\\\ u\_{11}l\_{31} & u\_{12}l\_{31}+u\_{22}l\_{32} & u\_{13}l\_{31} + u\_{23}l\_{32}+u\_{33} \\end{pmatrix} = LU\\end{align}
 
-Розв'язуючи для інших $l$ і $u$, ми отримуємо наступні рівняння:
+Solving for the other $l$ and $u$, we get the following equations:
 
-$u\_{11}=a\_{11}
+$u\_{11}=a\_{11}$
 
-$u\_{12}=a\_{12}
+$u\_{12}=a\_{12}$
 
-$u\_{13}=a\_{13}
+$u\_{13}=a\_{13}$
 
 $u\_{22}=a\_{22} - u\_{12}l\_{21}$
 
@@ -48,7 +48,7 @@ $u\_{23}=a\_{23} - u\_{13}l\_{21}$
 
 $u\_{33}=a\_{33} - (u\_{13}l\_{31} + u\_{23}l\_{32})$
 
-і для $l$:
+and for $l$:
 
 $l\_{21}=\\frac{1}{u\_{11}} a\_{21}$
 
@@ -56,11 +56,11 @@ $l\_{31}=\\frac{1}{u\_{11}} a\_{31}$
 
 $l\_{32}=\\frac{1}{u\_{22}} (a\_{32} - u\_{12}l\_{31})$
 
-Як бачимо, існує шаблон обчислення, який можна виразити наступною формулою, спочатку за $U$
+We see that there is a calculation pattern, which can be expressed as the following formulas, first for $U$
 
 $u\_{ij} = a\_{ij} - \\sum\_{k=1}^{i-1} u\_{kj}l\_{ik}$
 
-і потім для $L$
+and then for $L$
 
 $l\_{ij} = \\frac{1}{u\_{jj}} (a\_{ij} - \\sum\_{k=1}^{j-1} u\_{kj}l\_{ik})$
 

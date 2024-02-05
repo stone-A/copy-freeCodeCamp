@@ -12,7 +12,7 @@ dashedName: s-expressions
 
 # --instructions--
 
-Напишіть простий синтаксичний аналізатор для S-виразів, який зможе опрацьовувати рядки та цілі числа в лапках та без них.
+Write a simple reader/parser for S-Expressions that handles quoted and unquoted strings, integers and floats.
 
 Функція має зчитувати один, але вкладений S-вираз з рядка і повернути його як (вкладений) масив.
 

@@ -26,13 +26,13 @@ Segue o algoritmo:
   <li>Seed the RNG with the number of the deal.
   </li><li>Crie um array de 52 cartas: Ás de Paus, Ás de Ouro, Ás de Copas, Ás de Espadas, 2 de Paus, 2 de Ouro, e assim por diante: Ás, 2, 3, 4, 5, 6, 7, 8, 9, 10, Valete, Rainha, Rei. Os índices do array vão de 0 a 51, estando o Ás de Paus no índice 0 e o Rei de Espadas no índice 51.</li>
   <li>Até que o array esteja vazio:</li>
-  <li>Escolha uma carta aleatória no índice ≡ próximo número aleatório (tamanho do array mod).</li>
     <ul>
+      <li>Choose a random card at <i>index</i> ≡ <i>next random number</i> (mod <i>array length</i>).</li>
       <li>Swap this random card with the last card of the array.</li>
-      <li>Remova esta carta aleatória do array. (O comprimento do array diminui em 1.)</li>
-      <li>Distribua esta carta aleatória.</li>
+      <li>Remove this random card from the array. (Array length goes down by 1.)</li>
+      <li>Deal this random card.</li>
     </ul>
-  <li>Distribua todas as 52 cartas, com a face voltada para cima, em 8 colunas. As primeiras 8 cartas aparecem em 8 colunas, as próximas 8 cartas vão sobre as primeiras 8 cartas e assim por diante.</li>
+  <li>Deal all 52 cards, face up, across 8 columns. The first 8 cards go in 8 columns, the next 8 cards go on the first 8 cards, and so on.</li>
 </ol>
 
 **Exemplo:**
